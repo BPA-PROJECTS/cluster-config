@@ -38,16 +38,16 @@ services:
     depends_on:
       - zookeeper
 
-  kafdrop:
-    image: obsidiandynamics/kafdrop
-    container_name: kafdrop
+  kafka-ui:
+    image: provectuslabs/kafka-ui
+    container_name: kafka-ui
     restart: always  # Автоматически перезапускает контейнер при сбое или перезагрузке сервера
     networks:
       - kafka-net
     ports:
-      - "9000:9000"
+      - "9000:8080"
     environment:
-      KAFKA_BROKERCONNECT: "kafka:29092"
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: "kafka:29092"
     depends_on:
       - "kafka"
 
