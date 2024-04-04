@@ -10,7 +10,7 @@ services:
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
     networks:
-      - kafka_network
+      - tg_cluster_kafka_network
   kafka:
     image: 'bitnami/kafka:latest'
     ports:
@@ -29,7 +29,7 @@ services:
       - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true # Автоматическое создание топиков при обращении к несуществующим
       - KAFKA_CFG_DELETE_TOPIC_ENABLE=true # Разрешение удаления топиков
     networks:
-      - kafka_network
+      - tg_cluster_kafka_network
     depends_on:
       - zookeeper
 
@@ -45,11 +45,11 @@ services:
       - zookeeper
       - kafka
     networks:
-      - kafka_network
+      - tg_cluster_kafka_network
 
 networks:
   kafka_network:
-    driver: bridge
+    external: true
 
 volumes:
   zookeeper_data:
