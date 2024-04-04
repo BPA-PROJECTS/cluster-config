@@ -9,7 +9,6 @@ services:
       - 'zookeeper_data:/bitnami/zookeeper'
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
-    restart: unless-stopped
     networks:
       - kafka_network
   kafka:
@@ -29,7 +28,6 @@ services:
       - KAFKA_CFG_ADVERTISED_LISTENERS=${KAFKA_ADVERTISED_LISTENERS}
       - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true # Автоматическое создание топиков при обращении к несуществующим
       - KAFKA_CFG_DELETE_TOPIC_ENABLE=true # Разрешение удаления топиков
-    restart: unless-stopped
     networks:
       - kafka_network
     depends_on:
