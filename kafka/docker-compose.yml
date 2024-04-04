@@ -48,7 +48,7 @@ services:
       - tg_cluster_kafka_network
 
 networks:
-  kafka_network:
+  tg_cluster_kafka_network:
     external: true
 
 volumes:
