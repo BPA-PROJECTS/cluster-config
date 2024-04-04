@@ -4,4 +4,4 @@ networks:
   tg_cluster_app_network:
     driver: bridge
   tg_cluster_kafka_network:
-    external: bridge
+    driver: bridge
