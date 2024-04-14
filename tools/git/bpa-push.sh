@@ -1,2 +1,2 @@
 git push --set-upstream bpa --all
-git push --set-upstream bpa --tagsc
+git push --set-upstream bpa --tags
