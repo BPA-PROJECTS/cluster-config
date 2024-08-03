@@ -4,13 +4,18 @@
 git pull
 
 echo "TG Cluster Config - Start"
-# Создание сетей
-./common/create-networks.sh
+echo ""
+echo "Создание сетей"
+echo ""
 
-# Перейти в директорию с docker-compose.yml
+chmod +x ./common/create-networks.sh
+
+echo "Перейти в директорию с docker-compose.yml"
+echo ""
 cd "./kafka" || exit
 
-# Запуск docker-compose
+echo "Запуск docker-compose"
+echo ""
 docker-compose up -d
 
 echo "TG Cluster Config - Finish"
