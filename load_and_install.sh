@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Обновляет локальный репозиторий до последних изменений из удаленного репозитория.
+git pull
+
 echo "TG Cluster Config - Start"
 # Создание сетей
 ./common/create-networks.sh
