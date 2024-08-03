@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Создание сетей
+./common/create-networks.sh
+
+# Перейти в директорию с docker-compose.yml
+cd "./kafka" || exit
+
+# Запуск docker-compose
+docker-compose up -d
