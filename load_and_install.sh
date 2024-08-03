@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "TG Cluster Config - Start"
 # Создание сетей
 ./common/create-networks.sh
 
@@ -8,3 +9,5 @@ cd "./kafka" || exit
 
 # Запуск docker-compose
 docker-compose up -d
+
+echo "TG Cluster Config - Finish"
