@@ -21,8 +21,6 @@ services:
       - "4442:4442"
       - "4443:4443"
       - "4444:4444"
-    environment:
-      - SE_OPTS=-disableAuth
     networks:
       - tg_cluster_app_network
 
